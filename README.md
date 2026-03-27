@@ -1,120 +1,21 @@
-<img width="128" height="128" alt="image" src="https://github.com/user-attachments/assets/5e8be161-1902-48cb-97b8-8ec7c4192789" />
+# 修改
 
-English | [简体中文](./docs/zh_cn/README.md)
+## 骆驼和马的新获取途径
 
-# Carpet Sky Additions Reborn
+移除商人骆驼和骆驼转换机制（`traderCamels`），本机制本来是为了合理刷新骆驼这种生物。在1.21.11群骑纷争中出现了骆驼尸壳，这为骆驼的生成提供了一些可能更为原版感觉的可能。
 
-CarpetSkyAdditions-Reborn is a continuation of CarpetSkyAdditions aiming to keep the mod updated to later Minecraft versions.
+所以，我们调整了`僵尸马`和`骆驼尸壳`，使其在`虚弱状态`下分别吃`金胡萝卜`和`仙人掌`可以`4000GT`(`200s`)之后变成`马`/`骆驼`。暂时没有对骷髅马调整的想法，因为僵尸起码还是有肉体的，骷髅马转换为马很奇怪。
 
-[View the original mod here](https://github.com/jsorrell/CarpetSkyAdditions/)
+我们希望玩家可以游玩高版本内容解锁生物而不是单独的游商变种（另一个原因是版本移植时趁着骆驼尸壳这个机会直接简化移植工作不再修游商和羊驼之间的一堆调整了）。
 
-## Try the mod on sky.hardcoreanarchy.gay
+## 游商的新交易机制调整
 
-Carpet Sky Additions is a module for [fabric-carpet](https://github.com/gnembon/fabric-carpet)
-originally based on [skyrising/skyblock](https://github.com/skyrising/skyblock).
+由于现版本数据驱动交易，游商附加的新交易移植有所调整，但是为了保证原有设置还有效果（`lavaFromWanderingTrader`/`tallFlowersFromWanderingTrader`)，现在采用由增加的交易选项线性调整交易概率，将随机替换原有的交易项目。并且这两个设置现在默认为开。
 
-This mod aims to provide an expert-level SkyBlock style gameplay that depends on players' knowledge of Minecraft
-mechanics.
-In some cases, outside tools such as [Chunkbase](https://www.chunkbase.com/)
-or [MiniHUD](https://www.curseforge.com/minecraft/mc-mods/minihud) will be helpful.
-Usage of these is encouraged.
-Sometimes extended grinding or AFKing will be required for progression.
-Unless SkyBlock world generation is chosen or features are specifically enabled, the mod will do nothing.
-This means SkyBlock and Non-SkyBlock worlds can be switched between easily without restarting the
-client.
+## 数据包空岛调整
 
-## Installation
+新增云杉空岛、大云杉空岛、白桦树空岛、丛林树空岛、大丛林树空岛、深色橡木空岛、杜鹃树空岛、红树空岛、樱花树空岛、苍白橡树空岛，即补全了主世界全部树种的空岛，因为开地狱门就会解锁菌岩，所以没有考虑提供初始地狱的菌柄空岛类型。方便快速切换不同的起始树种进行空岛游玩。
 
-To create a new SkyBlock world, choose `World Type: SkyBlock` and enable the datapack `"carpetskyadditions/skyblock"`.
+## 默认调整
 
-If you want a harder challenge, enable the datapack `"carpetskyadditions/skyblock_acacia"` to start with an Acacia
-tree instead of an Oak tree.
-
-If you want an even harder challenge, enable the datapack `"carpetskyadditions/skyblock_no_tree"` to start with only
-a platform without any tree.
-
-All datapacks are also available with a More Mob Heads (Vanilla Tweaks) variant.
-
-For custom or server installations, follow the [Detailed Installation Instructions](docs/en_us/installation.md).
-
-## Features
-
-### SkyBlock Generation
-
-A SkyBlock world generates exactly like a Default generation world, but with every block removed. Biomes and Structure
-Bounding Boxes are kept in place. This means Husks will still spawn in Deserts and Blazes will spawn in Nether
-Fortresses, for example. Even with almost every block removed, you have access to most things in the game.
-
-[More Generation Details](docs/en_us/generation.md)
-
-### Gameplay Changes ###
-
-SkyBlock generation does, however, leave a few unobtainable resources.
-In addition to adding SkyBlock generation, this mod also fills in
-the gaps, making as minimal and Minecrafty changes as possible.
-
-The biggest progress-blocker is Lava, which is unobtainable by default.
-This prevents going to the Nether or End or getting Cobblestone.
-This mod fixes that problem by providing a way to get Lava.
-
-Sand is also very limited in a default SkyBlock world, but the mod allows for more to be created.
-
-Most other resources provided by this mod are cosmetic and don't make major changes to progression, such as Dead Bushes
-and Ender Dragon Heads.
-
-When possible, changes were added to a datapack instead of being programmed into the mod for ease of user customization.
-The datapack is built into the mod.
-
-SkyBlock advancements were also added to guide progression and document the mod's changes to vanilla.
-
-*When installed with default settings, all blocks, items, mobs, and advancements obtainable in Default generation are
-obtainable in SkyBlock generation.*
-
-[List of Mod Features](docs/en_us/features.md)
-
-[List of Datapack Features](docs/en_us/datapack.md)
-
-### Commands
-This mod provides a command for generating islands,
-which simplifies having multiple players on the same server with different starting islands.
-
-[List of Mod Commands](docs/en_us/commands.md)
-
-### Progression Walkthrough
-
-If you get stuck, a general progression walkthrough is available [here](docs/en_us/progression.md).
-
-### Fixing Old Trial Spawners / Vaults
-
-If you have broken Trial Spawners / Vaults from an older version of this mod that aren't working properly
-You can use [mcaselector](https://github.com/Querz/mcaselector) to fix them.
-Simply download the mcaselector.jar, place it next to your world folder, and run it in a command-line using this command:
-
-`java -jar mcaselector.jar --mode delete --world 'world' --query 'Palette contains "trial_spawner" OR Palette contains "vault"'`
-*Note: This will completely delete any chunks containing vaults/trial spawners, so they can be regenerated. Use with caution.*
-
-## Translations
-The mod and the datapack are available for translation using [Crowdin](https://crowdin.com/project/carpet-sky-additions-reborn). 
-If you are able to add translations, your help would be much appreciated.
-
-## Acknowledgements
-- [@Seigmannen](https://github.com/Seigmannen) Merging his improved datapacks with better balance & more varied starts
-
-- [@skyrising](https://github.com/skyrising/skyblock) for the initial mod idea
-
-- [@DeadlyMC](https://github.com/DeadlyMC/Skyblock-datapack) for the initial ideas for the datapack
-
-- [@gnembon](https://github.com/gnembon/fabric-carpet) for `fabric-carpet`
-
-- [Vanilla Tweaks](https://vanillatweaks.net) for the More Mob Heads Datapack
-
-- All the translators on Crowdin
-
-## License
-This project is licensed under the terms of the MIT license.
-
-## Notable Contributors
-- [Seigmannen](https://github.com/Seigmannen) (Code/Datapack/Testing)
-- [XieLong55](https://github.com/XieLong55) (Simplified Chinese Translation Updates)
-- [SilianZ](https://github.com/SilianZ) (Translations and Crowdin setup)
-
+默认开启了`lavaFromWanderingTrader`和`tallFlowersFromWanderingTrader`。
