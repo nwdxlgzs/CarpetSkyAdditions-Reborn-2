@@ -50,7 +50,7 @@ public abstract class ZombieHorseMixin extends AbstractHorse {
             if (!this.level().isClientSide()) {
                 stack.consume(1, player);
                 // 转换时间 40 ticks (2秒)，用于测试；正式版可改为 4000 (200秒)
-                this.startConverting(40);
+                this.startConverting(4000);
             }
             return InteractionResult.SUCCESS;
         }
