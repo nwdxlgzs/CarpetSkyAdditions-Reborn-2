@@ -5,12 +5,14 @@
   "name": "${name}",
   "description": "Empty world generation with new ways to obtain resources",
   "authors": [
-    "jsorrell"
+    "jsorrell",
+    "TreeOfSelf",
+    "nwdxlgzs"
   ],
   "contact": {
-    "homepage": "https://github.com/jsorrell/CarpetSkyAdditions",
-    "sources": "https://github.com/jsorrell/CarpetSkyAdditions",
-    "issues": "https://github.com/jsorrell/CarpetSkyAdditions/issues"
+    "homepage": "https://github.com/nwdxlgzs/CarpetSkyAdditions-Reborn-2",
+    "sources": "https://github.com/nwdxlgzs/CarpetSkyAdditions-Reborn-2",
+    "issues": "https://github.com/nwdxlgzs/CarpetSkyAdditions-Reborn-2/issues"
   },
   "license": "MIT",
   "icon": "assets/carpetskyadditions/icon.png",

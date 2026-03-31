@@ -12,7 +12,9 @@ import com.jsorrell.carpetskyadditions.SkyAdditionsExtension;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.world.item.trading.MerchantOffer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,7 +53,7 @@ public class SkyAdditionsSettings {
     private static class TallFlowersTradesNameFix extends SettingFixer {
         @Override
         public String[] names() {
-            return new String[] {"wanderingTraderSkyBlockTrades", "tallFlowersFromWanderingTrader"};
+            return new String[]{"wanderingTraderSkyBlockTrades", "tallFlowersFromWanderingTrader"};
         }
 
         @Override
@@ -109,7 +111,7 @@ public class SkyAdditionsSettings {
     private static class ShulkerSpawningNameFix extends SettingFixer {
         @Override
         public String[] names() {
-            return new String[] {"shulkerSpawning", "shulkerSpawnsOnDragonKill"};
+            return new String[]{"shulkerSpawning", "shulkerSpawnsOnDragonKill"};
         }
 
         @Override
@@ -137,7 +139,7 @@ public class SkyAdditionsSettings {
     private static class SweetBerriesFixer extends SettingFixer {
         @Override
         public String[] names() {
-            return new String[] {"foxesSpawnWithBerries", "foxesSpawnWithSweetBerriesChance"};
+            return new String[]{"foxesSpawnWithBerries", "foxesSpawnWithSweetBerriesChance"};
         }
 
         @Override
@@ -157,10 +159,10 @@ public class SkyAdditionsSettings {
     }
 
     @Rule(
-            categories = FEATURE,
-            options = {"0", "0.2", "1"},
-            strict = false,
-            validators = Validators.Probablity.class)
+        categories = FEATURE,
+        options = {"0", "0.2", "1"},
+        strict = false,
+        validators = Validators.Probablity.class)
     @SkyAdditionsSetting(value = "0.2", fixer = SweetBerriesFixer.class)
     public static double foxesSpawnWithSweetBerriesChance = 0d;
 
@@ -186,7 +188,7 @@ public class SkyAdditionsSettings {
     private static class AllayableVexesFixer extends SettingFixer {
         @Override
         public String[] names() {
-            return new String[] {"renewableAllays", "allayableVexes"};
+            return new String[]{"renewableAllays", "allayableVexes"};
         }
 
         @Override
@@ -215,7 +217,7 @@ public class SkyAdditionsSettings {
     private static class RenewableDeepslateSetting extends Validator<String> {
         @Override
         public String validate(
-                CommandSourceStack source, CarpetRule<String> currentRule, String newValue, String string) {
+            CommandSourceStack source, CarpetRule<String> currentRule, String newValue, String string) {
             SkyAdditionsSettings.doRenewableDeepslate = !"false".equalsIgnoreCase(newValue);
             SkyAdditionsSettings.renewableDeepslateFromSplash = "true".equalsIgnoreCase(newValue);
 
@@ -224,17 +226,15 @@ public class SkyAdditionsSettings {
     }
 
     @Rule(
-            categories = FEATURE,
-            options = {"true", "false", "no_splash"},
-            validators = RenewableDeepslateSetting.class)
+        categories = FEATURE,
+        options = {"true", "false", "no_splash"},
+        validators = RenewableDeepslateSetting.class)
     @SkyAdditionsSetting("true")
     @SuppressWarnings("unused")
     public static String renewableDeepslate = "false";
 
     public static boolean doRenewableDeepslate = false;
     public static boolean renewableDeepslateFromSplash = false;
-
-
 
 
     @Rule(categories = FEATURE)
@@ -249,7 +249,7 @@ public class SkyAdditionsSettings {
     private static class SuspiciousSniffersSetting extends Validator<String> {
         @Override
         public String validate(
-                CommandSourceStack source, CarpetRule<String> currentRule, String newValue, String string) {
+            CommandSourceStack source, CarpetRule<String> currentRule, String newValue, String string) {
             SkyAdditionsSettings.doSuspiciousSniffers = !"false".equalsIgnoreCase(newValue);
             SkyAdditionsSettings.ironFromSniffers = "true".equalsIgnoreCase(newValue);
 
@@ -258,9 +258,9 @@ public class SkyAdditionsSettings {
     }
 
     @Rule(
-            categories = FEATURE,
-            options = {"true", "false", "no_iron"},
-            validators = SuspiciousSniffersSetting.class)
+        categories = FEATURE,
+        options = {"true", "false", "no_iron"},
+        validators = SuspiciousSniffersSetting.class)
     @SkyAdditionsSetting("true")
     @SuppressWarnings("unused")
     public static String suspiciousSniffers = "false";
@@ -280,7 +280,7 @@ public class SkyAdditionsSettings {
     public static class WanderingTraderSpawnChanceValidator extends Validator<Double> {
         @Override
         public Double validate(
-                CommandSourceStack source, CarpetRule<Double> currentRule, Double newValue, String string) {
+            CommandSourceStack source, CarpetRule<Double> currentRule, Double newValue, String string) {
             return (0.025 <= newValue && newValue <= 1) ? newValue : null;
         }
 
@@ -291,10 +291,10 @@ public class SkyAdditionsSettings {
     }
 
     @Rule(
-            categories = WANDERING_TRADER,
-            options = {"0.075", "0.2", "1"},
-            strict = false,
-            validators = WanderingTraderSpawnChanceValidator.class)
+        categories = WANDERING_TRADER,
+        options = {"0.075", "0.2", "1"},
+        strict = false,
+        validators = WanderingTraderSpawnChanceValidator.class)
     public static double maxWanderingTraderSpawnChance = 0.075;
 
     /* Wandering Trader Spawn Rate */
@@ -311,11 +311,31 @@ public class SkyAdditionsSettings {
     }
 
     @Rule(
-            categories = WANDERING_TRADER,
-            options = {"6000", "24000", "72000"},
-            strict = false,
-            validators = POSITIVE_NUMBER.class)
+        categories = WANDERING_TRADER,
+        options = {"6000", "24000", "72000"},
+        strict = false,
+        validators = POSITIVE_NUMBER.class)
     public static int wanderingTraderSpawnRate = 24000;
+
+    @Rule(categories = FEATURE)
+    @SkyAdditionsSetting("true")
+    public static boolean existElsaSnowGolem = true;
+
+    @Rule(categories = FEATURE)
+    @SkyAdditionsSetting("true")
+    public static boolean existOlafSnowGolem = true;
+
+    @Rule(categories = FEATURE)
+    @SkyAdditionsSetting("false")
+    public static boolean pseudoPeace = false;
+
+    @Rule(categories = FEATURE)
+    @SkyAdditionsSetting("false")
+    public static boolean noAttackEvoker = false;
+
+    @Rule(categories = FEATURE)
+    @SkyAdditionsSetting("false")
+    public static boolean banEnderManTeleport = false;
 
     /**
      * Returns a map of all rules and their default values for dynamic application.
@@ -327,6 +347,8 @@ public class SkyAdditionsSettings {
         rules.put("renewableDragonHeads", true);
         rules.put("suspiciousSniffers", true);
         rules.put("tallFlowersFromWanderingTrader", true);
+        rules.put("cheapAndCostEffectiveOffer", true);
+        rules.put("lavaFromWanderingTrader", true);
         rules.put("spreadingSmallDripleaves", true);
         rules.put("spreadingCoral", true);
         rules.put("shulkerSpawnsOnDragonKill", true);

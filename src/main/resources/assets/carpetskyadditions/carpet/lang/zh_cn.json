@@ -45,5 +45,10 @@
   "carpetskyadditions.rule.spreadingCoral.extra.0": "珊瑚传播到方解石上的概率随坐标的不同而变化",
   "carpetskyadditions.rule.maxWanderingTraderSpawnChance.desc": "流浪商人的最大生成概率",
   "carpetskyadditions.rule.maxWanderingTraderSpawnChance.extra.0": "这个值从0.025开始，每当流浪商人生成失败时会增加0.025，直到达到最大生成概率",
-  "carpetskyadditions.rule.wanderingTraderSpawnRate.desc": "流浪商人在每个游戏刻生成的概率"
+  "carpetskyadditions.rule.wanderingTraderSpawnRate.desc": "流浪商人在每个游戏刻生成的概率",
+  "carpetskyadditions.rule.existElsaSnowGolem.desc": "名为 `Elsa` 或 `艾莎` 的雪傀儡不会受到融化伤害，并且可以冻结脚下的水。",
+  "carpetskyadditions.rule.existOlafSnowGolem.desc": "名为 `Olaf` 或 `雪宝` 的雪傀儡不会受到融化伤害。",
+  "carpetskyadditions.rule.pseudoPeace.desc": "服务端伪和平",
+  "carpetskyadditions.rule.noAttackEvoker.desc": "没有伤害性攻击能力的唤魔者",
+  "carpetskyadditions.rule.banEnderManTeleport.desc": "禁用末影人瞬移"
 }
