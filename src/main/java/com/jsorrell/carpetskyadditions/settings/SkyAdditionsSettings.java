@@ -342,6 +342,11 @@ public class SkyAdditionsSettings {
      */
     public static Map<String, Object> getRules() {
         Map<String, Object> rules = new HashMap<>();
+        rules.put("existElsaSnowGolem", true);
+        rules.put("existOlafSnowGolem", true);
+        rules.put("pseudoPeace", true);
+        rules.put("noAttackEvoker", true);
+        rules.put("banEnderManTeleport", true);
         rules.put("coralErosion", true);
         rules.put("allayableVexes", true);
         rules.put("renewableDragonHeads", true);

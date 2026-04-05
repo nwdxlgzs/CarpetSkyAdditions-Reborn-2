@@ -51,6 +51,7 @@
     "SnowGolemMixin",
     "SonicBoomMixin",
     "SpiderMixin",
+    "SugarCaneBlockMixin",
     "TheEndGatewayBlockEntityMixin",
     "ThrownPotionMixin",
     "TurtleEggBlockMixin",
