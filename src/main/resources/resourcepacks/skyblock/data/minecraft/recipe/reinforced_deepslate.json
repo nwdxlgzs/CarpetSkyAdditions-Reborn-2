@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "key": {
+    "A": "minecraft:deepslate",
+    "B": "minecraft:netherite_ingot",
+    "C": "minecraft:sculk_catalyst"
+  },
+  "result": {
+    "id": "minecraft:reinforced_deepslate",
+    "count": 1
+  }
+}

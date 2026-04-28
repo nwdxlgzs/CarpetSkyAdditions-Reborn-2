@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:water_bucket",
+    "minecraft:lava_bucket",
+    "minecraft:lava_bucket",
+    "minecraft:lava_bucket",
+    "minecraft:lava_bucket",
+    "minecraft:lava_bucket",
+    "minecraft:lava_bucket",
+    "minecraft:lava_bucket",
+    "minecraft:lava_bucket"
+  ],
+  "result": {
+    "id": "minecraft:obsidian",
+    "count": 8
+  }
+}

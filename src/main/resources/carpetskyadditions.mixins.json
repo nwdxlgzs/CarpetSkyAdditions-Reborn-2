@@ -11,6 +11,7 @@
     "BlazeToBreezeMixin$BlazeMixin",
     "BlocksMixin",
     "CamelHuskMixin",
+    "CatMixin",
     "ChunkGeneratorAccessor",
     "DeadBushToBushMixin",
     "DispensePotionBehaviorMixin",
